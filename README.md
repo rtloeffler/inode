@@ -8,7 +8,8 @@ Create file manually otherwise bash strips a few things
 `nano /home/ubuntu/inodeuseage.sh`
 
 Add contents
-```#!/bin/bash
+```
+#!/bin/bash
 COUNT=`df -i|grep '^/dev'|awk '{print $6, 100 - $5}'|tr -d '// '`
 USED=20
 SERVER=agp-tn

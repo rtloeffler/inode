@@ -1,0 +1,2 @@
+# inode
+check inode use

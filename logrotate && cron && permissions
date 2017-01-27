@@ -1,0 +1,11 @@
+chmod +x /home/ubuntu/inodeuseage.sh && echo "/var/log/inodesuseage.log {
+    su root root
+    missingok
+    notifempty
+    size 100M
+    create 0600 root root
+    delaycompress
+    compress
+    rotate 4
+    endscript
+}" > /etc/logrotate.d/inodesuseage && crontab -l | { cat; echo "* * * * * /home/ubuntu/inodeuseage.sh >> /var/log/inodesuseage.log 2>&1 &"; } | crontab -

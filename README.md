@@ -36,7 +36,7 @@ chmod +x /home/ubuntu/inodeuseage.sh && echo "/var/log/inodesuseage.log {
   compress
   rotate 4
   endscript
-}" > /etc/logrotate.d/inodesuseage && crontab -l | { cat; echo "* * * * * /home/ubuntu/inodeuseage.sh >> /var/log/inodesuseage.log 2>&1 &"; } | crontab -
+}" > /etc/logrotate.d/inodesuseage && crontab -l | { cat; echo "*/5 * * * * /home/ubuntu/inodeuseage.sh >> /var/log/inodesuseage.log 2>&1 &"; } | crontab -
 ```
 
 Check log file to make sure its running
